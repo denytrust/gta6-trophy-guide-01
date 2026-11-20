@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Platinum Atlas — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232b1150'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23ff5e8a'%3E★%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <p class="eyebrow">Grand Theft Auto VI · PlayStation 5 · 55 trophies</p>
+    <h1>Leonida Platinum Atlas</h1>
+    <p class="tagline">Every trophy, its guide, and the road to the platinum — in one offline tracker.</p>
+    <div class="progress-wrap">
+      <div class="progress-line"><span id="progressText">0 of 55 earned</span><span id="progressPct">0%</span></div>
+      <div class="progress-bar"><div id="progressFill"></div></div>
+      <div class="grade-chips" id="gradeChips"></div>
+    </div>
+  </div>
+</header>
+<div class="toolbar" id="toolbar">
+  <div class="toolbar-inner">
+    <label class="field grow"><span>Search</span><input id="search" type="search" placeholder="Search a trophy, mission or keyword…"></label>
+    <label class="field"><span>Grade</span><select id="grade">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select></label>
+    <label class="field"><span>Kind</span><select id="kind">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="stranger">Stranger</option>
+      <option value="activity">Activity</option>
+      <option value="collectible">Collectible</option>
+      <option value="grind">Grind</option>
+      <option value="moment">Moment</option>
+      <option value="completion">Completion</option>
+      <option value="platinum">Platinum</option>
+    </select></label>
+    <label class="field"><span>Status</span><select id="status">
+      <option value="all">Earned &amp; not yet</option>
+      <option value="earned">Earned</option>
+      <option value="missing">Not yet earned</option>
+    </select></label>
+    <label class="check"><input id="missableOnly" type="checkbox"> Missable &amp; one-off moments only</label>
+    <label class="check"><input id="spoiler" type="checkbox"> <strong>Spoiler shield on</strong> <span class="hint">— story trophies stay hidden until you earn them</span></label>
+    <div class="actions">
+      <button id="exportBtn" type="button">Export progress</button>
+      <button id="importBtn" type="button">Import progress</button>
+      <input id="importFile" type="file" accept="application/json" hidden>
+      <button id="resetBtn" type="button" class="danger">Reset</button>
+    </div>
+  </div>
+</div>
+<main>
+  <section class="roadmap" id="roadmapSection">
+    <h2>Roadmap to the platinum</h2>
+    <p class="roadmap-intro">One playthrough is enough, and everything is single-player and offline. Play the story first, grab the one-off moments as they come, then clean up activities, collectibles and the long grinds in free roam.</p>
+    <div class="phases" id="phases"></div>
+  </section>
+  <section class="tracker" id="trackerSection">
+    <div class="list-col">
+      <h2 id="listHeading">All trophies</h2>
+      <p class="list-meta" id="listMeta">Showing 55 of 55 trophies · 0 earned</p>
+      <div class="cards" id="cards"></div>
+    </div>
+    <aside class="detail-col">
+      <div class="detail" id="detailPanel"></div>
+      <div class="about">
+        <h3>About this guide</h3>
+        <p>Names, descriptions and grades are the official PlayStation 5 list (via Exophase, as of 18 November 2026). Every guide is written in our own words for this entry, and each one names its sources. Where a method is not yet confirmed by a cited source, the guide says so instead of inventing it.</p>
+        <p>The game launched on 19 November 2026. Only one trophy is flagged as possibly missable by community guides — Positive Mental Attitude (GTABase, PowerPyx). The rest are marked one-off moments where the description ties them to a specific situation, because the game has no mission replay.</p>
+        <p>Your progress lives only in this browser (localStorage). Export it to keep a backup, or to move it to another browser.</p>
+      </div>
+    </aside>
+  </section>
+</main>
+<footer>
+  <p>Leonida Platinum Atlas — an unofficial fan guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive; this guide uses no Rockstar logo, artwork or game screenshots. Trophy list: official PS5 list, 18 November 2026. Works fully offline.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>

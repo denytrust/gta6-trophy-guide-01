@@ -1,0 +1,300 @@
+/* Leonida Platinum Atlas — a dark Vice City-inspired look, drawn with plain CSS.
+   No images, no web fonts, no network: every pixel comes from this file. */
+
+:root {
+  --bg: #14101f;
+  --bg-soft: #1d1830;
+  --card: #221c38;
+  --card-edge: #3a2f5e;
+  --ink: #f2eefc;
+  --ink-dim: #b9b0d4;
+  --ink-faint: #8a80a8;
+  --accent: #ff5e8a;
+  --accent-2: #2dd4c4;
+  --gold: #f5c542;
+  --silver: #cfd6e4;
+  --bronze: #e08a4c;
+  --platinum: #7fe3f0;
+  --green: #4ade80;
+  --danger: #ff6b6b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+a { color: var(--accent-2); }
+
+/* --- hero --- */
+.hero {
+  background: linear-gradient(135deg, #2b1150 0%, #4a1042 55%, #0e2a4a 100%);
+  border-bottom: 3px solid var(--accent);
+  padding: 34px 28px 26px;
+}
+.hero-inner { max-width: 1220px; margin: 0 auto; }
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--accent-2);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.hero h1 {
+  margin: 0 0 4px;
+  font-size: 44px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.tagline { margin: 0 0 18px; color: var(--ink-dim); font-size: 16px; }
+.progress-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.progress-bar {
+  height: 12px;
+  background: #0c0918;
+  border: 1px solid var(--card-edge);
+  border-radius: 999px;
+  overflow: hidden;
+}
+#progressFill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 999px;
+}
+.grade-chips { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.grade-chip {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--card-edge);
+  background: var(--bg-soft);
+  color: var(--ink-dim);
+}
+.grade-chip b { color: var(--ink); }
+
+/* --- sticky toolbar --- */
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #171228;
+  border-bottom: 1px solid var(--card-edge);
+  padding: 10px 28px;
+}
+.toolbar-inner {
+  max-width: 1220px;
+  margin: 0 auto;
+  display: flex;
+  gap: 14px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.field { display: flex; flex-direction: column; gap: 3px; }
+.field.grow { flex: 1 1 260px; }
+.field > span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.field input[type="search"],
+.field select {
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--card-edge);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-family: inherit;
+}
+.field select { min-width: 130px; }
+.check {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--ink-dim);
+  padding-bottom: 8px;
+  cursor: pointer;
+}
+.check input { width: 17px; height: 17px; accent-color: var(--accent); }
+.check .hint { color: var(--ink-faint); font-size: 12px; }
+.actions { display: flex; gap: 8px; margin-left: auto; }
+button {
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--card-edge);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+}
+button:hover { border-color: var(--accent-2); }
+button.danger { color: var(--danger); }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* --- sections --- */
+main { max-width: 1220px; margin: 0 auto; padding: 0 28px 40px; }
+#roadmapSection, .tracker, .detail { scroll-margin-top: 160px; }
+h2 { font-size: 26px; margin: 26px 0 6px; }
+.roadmap-intro { color: var(--ink-dim); margin: 0 0 16px; max-width: 900px; }
+.phases {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+.phase {
+  background: var(--card);
+  border: 1px solid var(--card-edge);
+  border-radius: 12px;
+  padding: 14px;
+}
+.phase h3 { margin: 0 0 2px; font-size: 15px; }
+.phase .phase-no {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.phase p { margin: 6px 0 10px; font-size: 13px; color: var(--ink-dim); }
+.phase .phase-count { color: var(--accent-2); font-size: 13px; font-weight: 700; }
+.phase .trophy-names { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.phase .trophy-names span {
+  font-size: 11px;
+  background: var(--bg-soft);
+  border: 1px solid var(--card-edge);
+  border-radius: 999px;
+  padding: 2px 8px;
+  color: var(--ink-dim);
+}
+.phase .trophy-names span.done { color: var(--green); border-color: var(--green); text-decoration: line-through; }
+
+/* --- tracker: list + detail --- */
+.tracker {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 24px;
+  align-items: start;
+}
+.list-meta { color: var(--ink-faint); font-size: 13px; margin: 0 0 12px; }
+.cards { display: flex; flex-direction: column; gap: 10px; }
+.card {
+  display: flex;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--card-edge);
+  border-left: 4px solid var(--bronze);
+  border-radius: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  color: inherit;
+}
+.card:hover { border-color: var(--accent-2); }
+.card.selected { border-color: var(--accent-2); box-shadow: 0 0 0 1px var(--accent-2); }
+.card.grade-platinum { border-left-color: var(--platinum); }
+.card.grade-gold { border-left-color: var(--gold); }
+.card.grade-silver { border-left-color: var(--silver); }
+.card.grade-bronze { border-left-color: var(--bronze); }
+.card input[type="checkbox"] { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--green); flex: none; }
+.card-body { flex: 1; min-width: 0; }
+.card-title { font-size: 15px; font-weight: 700; }
+.card.earned .card-title { text-decoration: line-through; color: var(--ink-dim); }
+.card-desc { font-size: 13px; color: var(--ink-dim); margin-top: 1px; }
+.card-guide { font-size: 13px; color: var(--ink-dim); margin-top: 6px; }
+.card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--card-edge);
+  color: var(--ink-dim);
+}
+.tag.grade-platinum { color: var(--platinum); border-color: var(--platinum); }
+.tag.grade-gold { color: var(--gold); border-color: var(--gold); }
+.tag.grade-silver { color: var(--silver); border-color: var(--silver); }
+.tag.grade-bronze { color: var(--bronze); border-color: var(--bronze); }
+.tag.kind { text-transform: capitalize; }
+.tag.earned { color: var(--green); border-color: var(--green); }
+.tag.missable { color: #ffb020; border-color: #ffb020; }
+.tag.moment { color: var(--accent); border-color: var(--accent); }
+.card.masked .card-title, .card.masked .card-desc { color: var(--ink-faint); font-style: italic; }
+.empty { color: var(--ink-faint); padding: 24px 0; }
+
+/* --- detail panel --- */
+.detail-col { position: sticky; top: 160px; }
+.detail {
+  background: var(--card);
+  border: 1px solid var(--card-edge);
+  border-radius: 12px;
+  padding: 18px;
+}
+.detail .detail-grade { display: flex; gap: 6px; margin-bottom: 8px; }
+.detail h3 { margin: 0 0 8px; font-size: 22px; line-height: 1.2; }
+.detail .official {
+  border-left: 3px solid var(--accent-2);
+  padding: 4px 0 4px 12px;
+  margin: 0 0 12px;
+  color: var(--ink-dim);
+  font-style: italic;
+  font-size: 14px;
+}
+.detail .guide-text { font-size: 14px; margin: 0 0 12px; }
+.detail .warn {
+  background: #3a2a10;
+  border: 1px solid #ffb020;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  margin: 0 0 12px;
+}
+.detail .warn strong { color: #ffb020; }
+.detail h4 {
+  margin: 14px 0 6px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.detail ul { margin: 0; padding-left: 18px; font-size: 13px; }
+.detail li { margin-bottom: 3px; }
+.detail .earn-btn { width: 100%; margin-top: 14px; padding: 11px; font-size: 14px; }
+.detail .target-line { font-size: 13px; color: var(--ink-dim); margin: 0 0 4px; }
+.detail .target-line b { color: var(--ink); }
+.about {
+  margin-top: 16px;
+  background: var(--bg-soft);
+  border: 1px solid var(--card-edge);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.about h3 { margin: 0 0 8px; font-size: 15px; }
+.about p { font-size: 13px; color: var(--ink-dim); margin: 0 0 10px; }
+
+footer {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 28px 32px;
+  color: var(--ink-faint);
+  font-size: 12px;
+}
